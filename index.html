@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verres-Klausur: Top 8</title>
+<meta name="description" content="Die acht wahrscheinlichsten Stellen aus Ciceros Reden gegen Verres, mit Text, Übersetzung und Begründung der Wertung.">
+<style>
+:root {
+  --bg:#f7f6f2; --card:#ffffff; --ink:#1f2933; --muted:#5b6670; --rule:#d9dee3;
+  --acc:#1d4e89; --on-acc:#ffffff; --acc-soft:#e8eef6; --lat:#fbf8f1; --lat-line:#b0893d; --de-line:#1d4e89;
+  --p1:#e4f2e7; --p1-ink:#1e6b34; --ph:#fdf1d8; --ph-ink:#8a5a00; --p0:#fbe2e0; --p0-ink:#a12a1f;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#14171a; --card:#1c2024; --ink:#e6e8ea; --muted:#9aa4ad; --rule:#333a41;
+  --acc:#8db8ec; --on-acc:#10161d; --acc-soft:#22303f; --lat:#221f19; --lat-line:#c9a35a; --de-line:#8db8ec;
+  --p1:#183324; --p1-ink:#8fd6a3; --ph:#3a2e14; --ph-ink:#f0c36a; --p0:#3d1d1a; --p0-ink:#f29b91; } }
+:root[data-theme="dark"] { --bg:#14171a; --card:#1c2024; --ink:#e6e8ea; --muted:#9aa4ad; --rule:#333a41;
+  --acc:#8db8ec; --on-acc:#10161d; --acc-soft:#22303f; --lat:#221f19; --lat-line:#c9a35a; --de-line:#8db8ec;
+  --p1:#183324; --p1-ink:#8fd6a3; --ph:#3a2e14; --ph-ink:#f0c36a; --p0:#3d1d1a; --p0-ink:#f29b91; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; scroll-padding-top:60px; }
+body { margin:0; background:var(--bg); color:var(--ink);
+  font:16px/1.6 system-ui,-apple-system,"Segoe UI",Calibri,Roboto,sans-serif; }
+a { color:var(--acc); }
+.wrap { max-width:1080px; margin:0 auto; padding:0 16px; }
+.hero { padding:40px 16px 20px; }
+.hero h1 { margin:0 0 6px; font-size:clamp(1.6rem,4vw,2.3rem); line-height:1.2; color:var(--acc); }
+.hero p { margin:4px 0; color:var(--muted); }
+.btn { display:inline-block; margin-top:14px; padding:8px 14px; border-radius:8px; background:var(--acc); color:var(--on-acc);
+  text-decoration:none; font-weight:600; }
+nav.jump { position:sticky; top:0; z-index:5; background:var(--bg); border-bottom:1px solid var(--rule); }
+nav.jump .wrap { display:flex; gap:6px; overflow-x:auto; padding:10px 16px; }
+nav.jump a { flex:0 0 auto; text-decoration:none; color:var(--ink); background:var(--card); border:1px solid var(--rule);
+  border-radius:999px; padding:4px 12px 4px 4px; font-size:.88rem; white-space:nowrap; }
+nav.jump a span { display:inline-block; width:22px; height:22px; line-height:22px; text-align:center; border-radius:50%;
+  background:var(--acc); color:var(--on-acc); font-weight:700; margin-right:6px; font-size:.8rem; }
+.card, .passage { background:var(--card); border:1px solid var(--rule); border-radius:12px; padding:22px; margin:20px 0; }
+h2 { margin:0; font-size:1.35rem; line-height:1.3; }
+.card h2 { color:var(--acc); margin-bottom:10px; }
+h3 { margin:14px 0 6px; font-size:.8rem; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); }
+.txt h3, .why h3 { margin-top:0; }
+.muted { color:var(--muted); }
+details { border-top:1px solid var(--rule); padding-top:10px; margin-top:12px; }
+summary { cursor:pointer; font-weight:600; }
+ul { padding-left:20px; margin:8px 0; } li { margin:3px 0; }
+.scroll { overflow-x:auto; }
+table { border-collapse:collapse; width:100%; font-size:.92rem; }
+th, td { border:1px solid var(--rule); padding:7px 9px; vertical-align:top; text-align:left; }
+thead th { background:var(--acc-soft); }
+td.c, th.c { text-align:center; }
+.overview td a { text-decoration:none; }
+.p1 { background:var(--p1); color:var(--p1-ink); font-weight:600; }
+.ph { background:var(--ph); color:var(--ph-ink); font-weight:600; }
+.p0 { background:var(--p0); color:var(--p0-ink); font-weight:700; }
+.ph-head { display:flex; gap:14px; align-items:center; margin-bottom:12px; }
+.rank { flex:0 0 46px; height:46px; border-radius:50%; background:var(--acc); color:var(--on-acc); font-weight:800;
+  font-size:1.35rem; display:flex; align-items:center; justify-content:center; }
+.meta { margin:4px 0 0; display:flex; flex-wrap:wrap; gap:6px; font-size:.86rem; }
+.meta span { border:1px solid var(--rule); border-radius:6px; padding:1px 8px; color:var(--muted); }
+.meta .score { color:var(--acc); border-color:var(--acc); font-weight:700; }
+.context { margin:0 0 16px; }
+.texts { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:6px; }
+.txt { border-radius:8px; padding:14px 16px; }
+.txt p { margin:0; }
+.lat { background:var(--lat); border-left:4px solid var(--lat-line); }
+.lat p { font-family:Georgia,"Times New Roman",serif; font-style:italic; font-size:1.02rem; line-height:1.7; }
+.de { background:var(--acc-soft); border-left:4px solid var(--de-line); }
+table.crit th[scope=row] { width:26%; font-weight:600; }
+table.crit td.c { width:70px; }
+.why { margin-top:16px; padding:12px 16px; border-radius:8px; border:1px dashed var(--acc); }
+.why p { margin:0; }
+.top { margin:12px 0 0; text-align:right; font-size:.85rem; }
+footer { color:var(--muted); font-size:.85rem; padding:10px 16px 40px; }
+@media (max-width:760px) {
+  .texts { grid-template-columns:1fr; }
+  .card, .passage { padding:16px; }
+  table.crit th[scope=row] { width:auto; }
+}
+</style>
+</head>
+<body id="top">
+<div class="wrap hero">
+  <h1>Verres-Klausur: die acht wahrscheinlichsten Textstellen</h1>
+  <p>Cicero, <i>In Verrem</i>, actio II · Lateinklausur der EF am 9. November 2026 · Stand: 7. November 2026</p>
+  <a class="btn" href="Verres-Klausur-Top8.pdf">PDF herunterladen</a>
+</div>
+<nav class="jump" aria-label="Zu den Stellen"><div class="wrap"><a href="#p1"><span>1</span>II 4, 76</a><a href="#p2"><span>2</span>II 4, 79</a><a href="#p3"><span>3</span>II 5, 141</a><a href="#p4"><span>4</span>II 4, 57–58</a><a href="#p5"><span>5</span>II 5, 69</a><a href="#p6"><span>6</span>II 5, 26</a><a href="#p7"><span>7</span>II 2, 120</a><a href="#p8"><span>8</span>II 4, 51</a></div></nav>
+<main class="wrap">
+
+<section class="card">
+  <h2>Worum es geht</h2>
+  <p>Diese Seite ordnet acht Stellen aus Ciceros Reden gegen Verres. Jede davon passt gut zu den Hinweisen der Lehrkraft.
+  Zu jeder Stelle stehen der lateinische Text, eine deutsche Übersetzung und die Bewertung nach sieben Kriterien.</p>
+  <p>Eckige Klammern in der Übersetzung ergänzen, was im Latein nur mitgedacht ist. Meist ist das das fehlende Subjekt Verres.</p>
+  <details>
+    <summary>Die Hinweise der Lehrkraft (zur Erinnerung)</summary>
+    <ul>
+      <li>Der Text hat etwa 60 Wörter.</li>
+      <li>Er enthält mindestens einen Ortsnamen. Der Ort muss nicht neu sein.</li>
+      <li>Sizilien kommt inhaltlich vor. Das Wort <i>Sicilia</i> steht aber nicht im Text.</li>
+      <li>Es gibt eine Ellipse: Verres ist Subjekt eines Verbs in der 3. Person, wird aber nicht genannt. Das geschieht wahrscheinlich schon im ersten Satz.</li>
+      <li>Der Text hat vergleichsweise wenige Nebensätze.</li>
+      <li>Aufgaben: Übersetzung, Stilmittel, Ciceros Strategie im Vergleich mit den Texten aus dem Unterricht. Die Strategie ist schon in den ersten etwa 60 Wörtern zu erkennen.</li>
+      <li>Wiederholen soll man Satzglieder, besonders den Dativ.</li>
+    </ul>
+  </details>
+  <details>
+    <summary>Die Texte aus dem Unterricht (für Kriterium K7)</summary>
+    <div class="scroll"><table>
+      <thead><tr><th class="c">Text</th><th>Stelle</th><th>Ciceros Strategie</th></tr></thead>
+      <tbody>
+        <tr><td class="c">A</td><td>II 4, 1 (Proöm)</td><td>Cicero stellt die Taten scheinbar neutral dar und lässt die Zuhörer selbst urteilen. Adlige sollen sich nicht aus Standesgründen auf Verres’ Seite stellen. Dazu kommt Ciceros Lage als <i>homo novus</i>.</td></tr>
+        <tr><td class="c">B</td><td>II 3, 47</td><td>Verres zerstört die Landwirtschaft Siziliens. Das schadet auch den Interessen Roms.</td></tr>
+        <tr><td class="c">C</td><td>II 4, 72</td><td>Rom und Segesta haben eine gemeinsame Geschichte (Aeneas). Karthago ist der gemeinsame Feind. Verres erscheint schlimmer als die Feinde Roms.</td></tr>
+        <tr><td class="c">D</td><td>II 4, 74</td><td>Die Diana ist ein religiöses und kulturelles Symbol. Die Oberschicht macht sich mitschuldig, wenn sie Verres duldet. Verres greift gemeinsame römische Werte an.</td></tr>
+      </tbody>
+    </table></div>
+  </details>
+</section>
+
+<section class="card">
+  <h2>Die sieben Kriterien</h2>
+  <p>Jedes Kriterium gibt 1 Punkt, ½ Punkt oder 0 Punkte. Höchstens sind also 7 Punkte möglich.</p>
+  <div class="scroll"><table>
+    <thead><tr><th class="c">Nr.</th><th>Kriterium</th><th>1 Punkt</th><th>½ Punkt</th></tr></thead>
+    <tbody>
+      <tr><td class="c">K1</td><td>Ortsname</td><td>ein Stadtname (<i>Lilybaeum</i>, <i>Agrigento</i>)</td><td>nur der Name der Einwohner (<i>Segestani</i>) oder ein Adjektiv</td></tr>
+      <tr><td class="c">K2</td><td>Sizilien kommt vor, <i>Sicilia</i> fehlt</td><td>ein Ort oder Wort auf Sizilien, kein <i>Sicilia</i></td><td>Sizilien nur über den Zusammenhang</td></tr>
+      <tr><td class="c">K3</td><td>Ellipse im ersten Satz</td><td>Dem Hauptsatz des ersten Satzes fehlt das Subjekt. Verres ist aus dem Satz davor erschließbar.</td><td>– (Fehlt das Subjekt nur in einem Nebensatz, ist die Stelle ausgeschlossen.)</td></tr>
+      <tr><td class="c">K4</td><td>Etwa 60 Wörter</td><td>54 bis 66 Wörter</td><td>52–53 oder 67 und mehr, oder nur mit Kürzung</td></tr>
+      <tr><td class="c">K5</td><td>Stilmittel</td><td>mehrere deutliche Stilmittel</td><td>–</td></tr>
+      <tr><td class="c">K6</td><td>Wenige Nebensätze</td><td>0 bis 3</td><td>4 bis 5 (ab 6: 0 Punkte)</td></tr>
+      <tr><td class="c">K7</td><td>Bezug zu Ciceros Strategie in Text A–D</td><td>deutlicher Bezug zu mindestens einem Text</td><td>nur loser Bezug</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="card">
+  <h2>Übersicht</h2>
+  <div class="scroll"><table class="overview">
+    <thead><tr><th class="c">Platz</th><th>Stelle</th><th class="c">Wörter</th><th class="c">K1</th><th class="c">K2</th><th class="c">K3</th><th class="c">K4</th><th class="c">K5</th><th class="c">K6</th><th class="c">K7</th><th class="c">Summe</th></tr></thead>
+    <tbody><tr><td class="c">1</td><td><a href="#p1"><b>II 4, 76</b></a><br><span class="muted">Segesta wird erpresst</span></td><td class="c">63</td><td class="c ph">½</td><td class="c p1">1</td><td class="c p1">1</td><td class="c p1">1</td><td class="c p1">1</td><td class="c p1">1</td><td class="c p1">1</td><td class="c"><b>6½</b></td></tr><tr><td class="c">2</td><td><a href="#p2"><b>II 4, 79</b></a><br><span class="muted">Der Sockel der Diana und die Anrede an P. Scipio</span></td><td class="c">61</td><td class="c ph">½</td><td class="c p1">1</td><td class="c p1">1</td><td class="c p1">1</td><td class="c p1">1</td><td class="c p1">1</td><td class="c p1">1</td><td class="c"><b>6½</b></td></tr><tr><td class="c">3</td><td><a href="#p3"><b>II 5, 141</b></a><br><span class="muted">Servilius in Lilybaeum</span></td><td class="c">57</td><td class="c p1">1</td><td class="c p1">1</td><td class="c p1">1</td><td class="c p1">1</td><td class="c p1">1</td><td class="c ph">½</td><td class="c p1">1</td><td class="c"><b>6½</b></td></tr><tr><td class="c">4</td><td><a href="#p4"><b>II 4, 57–58</b></a><br><span class="muted">Der Ring des L. Titius</span></td><td class="c">61 / 71</td><td class="c p1">1</td><td class="c p1">1</td><td class="c p1">1</td><td class="c ph">½</td><td class="c p1">1</td><td class="c ph">½</td><td class="c p1">1</td><td class="c"><b>6</b></td></tr><tr><td class="c">5</td><td><a href="#p5"><b>II 5, 69</b></a><br><span class="muted">Wohin mit dem Piratenführer?</span></td><td class="c">52</td><td class="c p1">1</td><td class="c p1">1</td><td class="c p1">1</td><td class="c ph">½</td><td class="c p1">1</td><td class="c p1">1</td><td class="c ph">½</td><td class="c"><b>6</b></td></tr><tr><td class="c">6</td><td><a href="#p6"><b>II 5, 26</b></a><br><span class="muted">Winter in Syrakus</span></td><td class="c">64</td><td class="c p1">1</td><td class="c p1">1</td><td class="c p1">1</td><td class="c p1">1</td><td class="c p1">1</td><td class="c ph">½</td><td class="c ph">½</td><td class="c"><b>6</b></td></tr><tr><td class="c">7</td><td><a href="#p7"><b>II 2, 120</b></a><br><span class="muted">Ämterverkauf in den Städten</span></td><td class="c">55</td><td class="c ph">½</td><td class="c p1">1</td><td class="c p1">1</td><td class="c p1">1</td><td class="c p1">1</td><td class="c p1">1</td><td class="c ph">½</td><td class="c"><b>6</b></td></tr><tr><td class="c">8</td><td><a href="#p8"><b>II 4, 51</b></a><br><span class="muted">Silber aus Haluntium</span></td><td class="c">57</td><td class="c p1">1</td><td class="c p1">1</td><td class="c p1">1</td><td class="c p1">1</td><td class="c p1">1</td><td class="c p0">0</td><td class="c p1">1</td><td class="c"><b>6</b></td></tr></tbody>
+  </table></div>
+  <p>Keine Stelle erfüllt alle sieben Kriterien voll. Die drei ersten verfehlen je ein Kriterium zur Hälfte.
+  Zwischen Platz 1 und Platz 8 liegt nur ein halber Punkt. Die Punkte sind deshalb eine grobe Hilfe, keine Vorhersage.</p>
+  <p><b>Bei gleicher Punktzahl</b> steht vorn, wer keinen Ausfall (0 Punkte) hat. Danach entscheiden ein stärkerer Bezug zu den Unterrichtstexten und mehr Stilmittel.</p>
+</section>
+
+<section class="passage" id="p1">
+  <header class="ph-head">
+    <div class="rank">1</div>
+    <div>
+      <h2>Segesta wird erpresst</h2>
+      <p class="meta"><span>II 4, 76</span><span>63 Wörter</span><span class="score">6½ Punkte</span></p>
+    </div>
+  </header>
+  <p class="context"><b>Zusammenhang:</b> Dieselbe Episode wie die Unterrichtstexte C und D. Die §§ 75 und 76 wurden im Unterricht nicht gelesen. Vorher (§ 75): Verres will die Dianastatue. Die Beamten von Segesta weigern sich. <i>Iste tum petere ab illis, tum minari …</i></p>
+  <div class="texts">
+    <div class="txt lat"><h3>Lateinischer Text</h3><p lang="la">Praeterea magistratus eorum evocabat, optimum quemque et nobilissimum ad se arcessebat, circum omnia provinciae fora rapiebat, singillatim uni cuique calamitati fore se denuntiabat, universis se funditus eversurum esse illam civitatem minabatur. Itaque aliquando multis malis magnoque metu victi Segestani praetoris imperio parendum esse decreverunt. Magno cum luctu et gemitu totius civitatis, multis cum lacrimis et lamentationibus virorum mulierumque omnium simulacrum Dianae tollendum locatur.</p></div>
+    <div class="txt de"><h3>Übersetzung</h3><p>Außerdem bestellte [Verres] ihre Beamten zu sich, ließ gerade die Besten und Vornehmsten zu sich holen und schleppte sie durch alle Gerichtsorte der Provinz. Jedem Einzelnen kündigte er an, er werde ihm zum Verderben werden. Allen zusammen drohte er, er werde jene Stadt von Grund auf zerstören. Deshalb beschlossen die Segestaner schließlich, zermürbt von vielen Übeln und großer Angst, man müsse dem Befehl des Statthalters gehorchen. Unter großer Trauer und lautem Seufzen der ganzen Stadt, unter vielen Tränen und Klagen aller Männer und Frauen wird der Auftrag vergeben, das Standbild der Diana abzubauen.</p></div>
+  </div>
+  <h3>Bewertung</h3>
+  <div class="scroll"><table class="crit"><thead><tr><th>Kriterium</th><th class="c">Punkte</th><th>Begründung</th></tr></thead>
+  <tbody><tr><th scope="row">K1 Ortsname</th><td class="c ph">½</td><td>Nur der Name der Einwohner (<i>Segestani</i>), kein Stadtname.</td></tr><tr><th scope="row">K2 Sizilien ohne <i>Sicilia</i></th><td class="c p1">1</td><td><i>provinciae</i> meint Sizilien. <i>Sicilia</i> steht nicht da.</td></tr><tr><th scope="row">K3 Ellipse im 1. Satz</th><td class="c p1">1</td><td><i>evocabat</i> und die vier Verben danach haben kein Subjekt. Gemeint ist Verres; in § 75 steht <i>Iste</i>. Falle: <i>magistratus</i> ist Akkusativ Plural. Das zeigt das Verb im Singular.</td></tr><tr><th scope="row">K4 etwa 60 Wörter</th><td class="c p1">1</td><td>63 Wörter.</td></tr><tr><th scope="row">K5 Stilmittel</th><td class="c p1">1</td><td>Asyndeton mit Steigerung: fünf Verben ohne „und“, vom Vorladen bis zur Drohung mit Vernichtung. Antithese <i>singillatim uni cuique</i> – <i>universis</i>. Alliteration <i>multis malis magnoque metu</i>. Parallelismus <i>magno cum luctu …, multis cum lacrimis …</i>. Übertreibung (<i>omnia</i>, <i>funditus</i>).</td></tr><tr><th scope="row">K6 wenige Nebensätze</th><td class="c p1">1</td><td>Kein einziger Nebensatz.</td></tr><tr><th scope="row">K7 Bezug zu Text A–D</th><td class="c p1">1</td><td><b>D:</b> Dort wird die Rückkehr der Diana gefeiert (<i>summa cum gratulatione</i>). Hier wird ihr Abbau beweint (<i>magno cum luctu</i>). Der Gegensatz ist bewusst gebaut. <b>C:</b> Die Karthager raubten die Statue, Africanus brachte sie zurück. Jetzt nimmt ein römischer Statthalter sie wieder weg.</td></tr></tbody></table></div>
+  <div class="why"><h3>Warum dieser Platz</h3><p>Die Stelle hat als einzige gar keinen Nebensatz. Sie hat den stärksten Bezug zu C und D. Sie ist ein ungelesenes Stück aus einer gelesenen Episode. Ihr einziger Mangel ist der fehlende Stadtname.</p></div>
+  <p class="top"><a href="#top">↑ nach oben</a></p>
+</section>
+<section class="passage" id="p2">
+  <header class="ph-head">
+    <div class="rank">2</div>
+    <div>
+      <h2>Der Sockel der Diana und die Anrede an P. Scipio</h2>
+      <p class="meta"><span>II 4, 79</span><span>61 Wörter</span><span class="score">6½ Punkte</span></p>
+    </div>
+  </header>
+  <p class="context"><b>Zusammenhang:</b> Dieselbe Episode. Vorher (§§ 77–78): Die Statue ist weg. Der leere Sockel mit der Inschrift des Africanus erinnert alle an den Raub. P. Scipio ist ein junger Adliger aus der Familie des Africanus. Er unterstützt Verres vor Gericht.</p>
+  <div class="texts">
+    <div class="txt lat"><h3>Lateinischer Text</h3><p lang="la">Quod cum isti renuntiaretur de basi ac litteris, existimavit homines in oblivionem totius negoti esse venturos si etiam basim tamquam indicem sui sceleris sustulisset. Itaque tollendam istius imperio locaverunt; quae vobis locatio ex publicis litteris Segestanorum priore actione recitata est. Te nunc, P. Scipio, te, inquam, lectissimum ornatissimumque adulescentem, appello, abs te officium tuum debitum generi et nomini requiro et flagito.</p></div>
+    <div class="txt de"><h3>Übersetzung</h3><p>Als ihm dies über den Sockel und die Inschrift gemeldet wurde, glaubte [Verres], die Menschen würden die ganze Sache vergessen, wenn er auch den Sockel beseitigt hätte, der sein Verbrechen gleichsam anzeigte. Deshalb vergaben sie auf seinen Befehl den Auftrag, ihn abzubauen. Dieser Vertrag ist euch in der ersten Verhandlung aus den öffentlichen Akten der Segestaner vorgelesen worden. Dich nun, Publius Scipio, dich, sage ich, einen besonders auserlesenen und angesehenen jungen Mann, rufe ich an. Von dir fordere und verlange ich die Pflicht, die du deinem Geschlecht und deinem Namen schuldest.</p></div>
+  </div>
+  <h3>Bewertung</h3>
+  <div class="scroll"><table class="crit"><thead><tr><th>Kriterium</th><th class="c">Punkte</th><th>Begründung</th></tr></thead>
+  <tbody><tr><th scope="row">K1 Ortsname</th><td class="c ph">½</td><td>Nur der Name der Einwohner (<i>Segestanorum</i>).</td></tr><tr><th scope="row">K2 Sizilien ohne <i>Sicilia</i></th><td class="c p1">1</td><td>Es geht um Segesta auf Sizilien. <i>Sicilia</i> steht nicht da.</td></tr><tr><th scope="row">K3 Ellipse im 1. Satz</th><td class="c p1">1</td><td>Der Hauptsatz <i>existimavit</i> hat kein Subjekt. Gemeint ist Verres. Im Nebensatz davor steht er nur als Dativ (<i>isti</i>). Am Ende von § 78 heißt es <i>C. Verrem sustulisse</i>. Eine zweite Ellipse: <i>locaverunt</i> (die Segestaner).</td></tr><tr><th scope="row">K4 etwa 60 Wörter</th><td class="c p1">1</td><td>61 Wörter.</td></tr><tr><th scope="row">K5 Stilmittel</th><td class="c p1">1</td><td>Personifikation: Der Sockel wird zum Ankläger (<i>index sui sceleris</i>). Apostrophe <i>Te nunc, P. Scipio</i>. Wortwiederholung <i>te, inquam</i>. Zwei Superlative <i>lectissimum ornatissimumque</i>. Steigerung <i>requiro et flagito</i>.</td></tr><tr><th scope="row">K6 wenige Nebensätze</th><td class="c p1">1</td><td>Drei Nebensätze (<i>cum …</i>, <i>si …</i>, <i>quae …</i>).</td></tr><tr><th scope="row">K7 Bezug zu Text A–D</th><td class="c p1">1</td><td><b>D:</b> Die Oberschicht macht sich mitschuldig, wenn sie Verres duldet. Hier spricht Cicero genau so einen Adligen an. <b>C:</b> Verres zerstört, was Africanus geschaffen hat. <b>A:</b> Der <i>homo novus</i> mahnt einen Adligen an seine Pflicht.</td></tr></tbody></table></div>
+  <div class="why"><h3>Warum dieser Platz</h3><p>Gleiche Punktzahl wie Platz 1, gleiche Episode, sogar Bezug zu drei Texten. Platz 1 liegt trotzdem knapp vorn. Er hat keinen Nebensatz, diese Stelle hat drei. Einschätzung: Die Anrede an Scipio setzt Wissen voraus, das im Ausschnitt nicht steht.</p></div>
+  <p class="top"><a href="#top">↑ nach oben</a></p>
+</section>
+<section class="passage" id="p3">
+  <header class="ph-head">
+    <div class="rank">3</div>
+    <div>
+      <h2>Servilius in Lilybaeum</h2>
+      <p class="meta"><span>II 5, 141</span><span>57 Wörter</span><span class="score">6½ Punkte</span></p>
+    </div>
+  </header>
+  <p class="context"><b>Zusammenhang:</b> Vorher (§ 140): Der römische Bürger C. Servilius wird auf dem Forum von Lilybaeum vor Verres’ Richterstuhl ausgepeitscht. Der Grund: Er hatte offen über Verres gesprochen (<i>Locutus erat liberius de istius improbitate atque nequitia</i>).</p>
+  <div class="texts">
+    <div class="txt lat"><h3>Lateinischer Text</h3><p lang="la">Quod isti simul ac renuntiatum est, hominem iubet Lilybaeum vadimonium Venerio servo promittere. Promittit; Lilybaeum venitur. Cogere eum coepit, cum ageret nemo, nemo postularet, sponsionem mille nummum facere cum lictore suo, 'Ni furtis quaestum faceret.' Recuperatores se de cohorte sua dicebat daturum. Servilius et recusare et deprecari ne iniquis iudicibus nullo adversario iudicium capitis in se constitueretur.</p></div>
+    <div class="txt de"><h3>Übersetzung</h3><p>Sobald ihm das gemeldet worden war, befahl [Verres] dem Mann, einem Tempelsklaven der Venus zuzusichern, dass er in Lilybaeum vor Gericht erscheinen werde. Er sicherte es zu; man fand sich in Lilybaeum ein. Obwohl niemand Klage erhob und niemand etwas forderte, begann [Verres], ihn zu zwingen, mit seinem, Verres' eigenem, Liktor eine Prozesswette über tausend Sesterzen abzuschließen, mit der Formel: „falls er nicht durch Diebstähle Gewinn mache“. Er sagte, er werde die Richter aus seinem eigenen Gefolge stellen. Servilius weigerte sich und bat flehentlich darum, dass nicht vor parteiischen Richtern und ohne einen Ankläger ein Prozess gegen ihn eröffnet werde, in dem es um seine bürgerliche Existenz ging.</p></div>
+  </div>
+  <h3>Bewertung</h3>
+  <div class="scroll"><table class="crit"><thead><tr><th>Kriterium</th><th class="c">Punkte</th><th>Begründung</th></tr></thead>
+  <tbody><tr><th scope="row">K1 Ortsname</th><td class="c p1">1</td><td><i>Lilybaeum</i>, zweimal. Ein echter Stadtname.</td></tr><tr><th scope="row">K2 Sizilien ohne <i>Sicilia</i></th><td class="c p1">1</td><td>Lilybaeum liegt auf Sizilien. <i>Sicilia</i> steht nicht da.</td></tr><tr><th scope="row">K3 Ellipse im 1. Satz</th><td class="c p1">1</td><td>Der Hauptsatz <i>iubet</i> hat kein Subjekt. Gemeint ist Verres; er steht im Nebensatz nur als <i>isti</i>. Auch <i>coepit</i> und <i>dicebat</i> gehören zu ihm.</td></tr><tr><th scope="row">K4 etwa 60 Wörter</th><td class="c p1">1</td><td>57 Wörter.</td></tr><tr><th scope="row">K5 Stilmittel</th><td class="c p1">1</td><td>Knappe Sätze (<i>Promittit; Lilybaeum venitur.</i>). Anapher <i>nemo …, nemo</i>. Bittere Ironie: Servilius muss vor Verres’ eigenen Leuten beweisen, dass Verres stiehlt. Zwei Wörter für eine Sache (<i>recusare et deprecari</i>).</td></tr><tr><th scope="row">K6 wenige Nebensätze</th><td class="c ph">½</td><td>Vier Nebensätze (<i>simul ac</i>, <i>cum …</i>, <i>Ni …</i>, <i>ne …</i>).</td></tr><tr><th scope="row">K7 Bezug zu Text A–D</th><td class="c p1">1</td><td><b>D:</b> Verres verdreht das Recht gegen einen römischen Bürger, weil der ihn kritisiert hat. <b>A:</b> Cicero erzählt nüchtern und lässt die absurde Wette für sich sprechen.</td></tr></tbody></table></div>
+  <div class="why"><h3>Warum dieser Platz</h3><p>Als einzige der drei Spitzenstellen hat sie einen echten Stadtnamen. Sie hat aber vier Nebensätze. Sie stammt aus Buch 5, also aus keiner Episode, die im Unterricht gelesen wurde. Zählt nur ein Stadtname als Ortsname, rückt sie auf Platz 1.</p></div>
+  <p class="top"><a href="#top">↑ nach oben</a></p>
+</section>
+<section class="passage" id="p4">
+  <header class="ph-head">
+    <div class="rank">4</div>
+    <div>
+      <h2>Der Ring des L. Titius</h2>
+      <p class="meta"><span>II 4, 57–58</span><span>61 / 71 Wörter</span><span class="score">6 Punkte</span></p>
+    </div>
+  </header>
+  <p class="context"><b>Zusammenhang:</b> Vorher: Cicero hat von L. Piso Frugi erzählt, einem ehrlichen Statthalter. Dann fragt er: <i>Quam multis istum putatis hominibus honestis de digitis anulos abstulisse?</i></p>
+  <div class="texts">
+    <div class="txt lat"><h3>Lateinischer Text</h3><p lang="la">Numquam dubitavit, quotienscumque alicuius aut gemma aut anulo delectatus est. [Incredibile dicam, sed ita clarum ut ipsum negaturum non arbitrer.] Cum Valentio, eius interpreti, epistula Agrigento adlata esset, casu signum iste animadvertit in cretula. Placuit ei; quaesivit unde esset epistula; respondit Agrigento. Iste litteras ad quos solebat misit, ut is anulus ad se primo quoque tempore adferretur. Ita litteris istius patri familias, L. Titio, civi Romano, anulus de digito detractus est.</p></div>
+    <div class="txt de"><h3>Übersetzung</h3><p>Niemals zögerte [Verres], sooft er an jemandes Edelstein oder Ring Gefallen gefunden hatte. [Ich werde etwas Unglaubliches erzählen, aber es ist so bekannt, dass er selbst es, wie ich glaube, nicht leugnen wird.] Als seinem Dolmetscher Valentius ein Brief aus Agrigent gebracht worden war, bemerkte er zufällig das Siegelbild im Siegelton. Es gefiel ihm. Er fragte, woher der Brief sei. [Valentius] antwortete: aus Agrigent. Er schickte einen Brief an die Leute, denen er gewöhnlich schrieb, damit ihm dieser Ring so bald wie möglich gebracht werde. So wurde auf seinen Brief hin einem Familienvater, Lucius Titius, einem römischen Bürger, der Ring vom Finger gezogen.</p></div>
+  </div>
+  <h3>Bewertung</h3>
+  <div class="scroll"><table class="crit"><thead><tr><th>Kriterium</th><th class="c">Punkte</th><th>Begründung</th></tr></thead>
+  <tbody><tr><th scope="row">K1 Ortsname</th><td class="c p1">1</td><td><i>Agrigento</i>, zweimal.</td></tr><tr><th scope="row">K2 Sizilien ohne <i>Sicilia</i></th><td class="c p1">1</td><td>Agrigent liegt auf Sizilien. <i>Sicilia</i> steht im Satz davor und danach, aber nicht im Ausschnitt.</td></tr><tr><th scope="row">K3 Ellipse im 1. Satz</th><td class="c p1">1</td><td><i>Numquam dubitavit</i> hat kein Subjekt. Im Satz davor steht <i>istum</i>.</td></tr><tr><th scope="row">K4 etwa 60 Wörter</th><td class="c ph">½</td><td>61 Wörter nur, wenn die Lehrkraft den Satz <i>Incredibile dicam …</i> streicht. Sonst 71.</td></tr><tr><th scope="row">K5 Stilmittel</th><td class="c p1">1</td><td>Knappe Sätze ohne „und“ (<i>Placuit ei; quaesivit …; respondit Agrigento</i>). Steigerung der Beifügungen bis <i>civi Romano</i>. Passiv ohne Täter (<i>anulus … detractus est</i>). Kontrast: <i>casu</i> gegen die Folgen.</td></tr><tr><th scope="row">K6 wenige Nebensätze</th><td class="c ph">½</td><td>Fünf Nebensätze.</td></tr><tr><th scope="row">K7 Bezug zu Text A–D</th><td class="c p1">1</td><td><b>A:</b> Das Proöm sagt, Verres habe jede <i>gemma</i> mitgenommen, <i>quod placitum sit</i>. Hier: <i>gemma</i>, <i>Placuit ei</i>, Raub. <b>C:</b> Vergleich mit Piso statt mit den Karthagern. <b>D:</b> Das Opfer ist römischer Bürger.</td></tr></tbody></table></div>
+  <div class="why"><h3>Warum dieser Platz</h3><p>Zwei halbe Punkte: Länge und Nebensätze. Unter den Stellen mit 6 Punkten steht sie vorn. Sie hat einen echten Stadtnamen und einen deutlichen Bezug zu Text A (fast wörtlich) und C.</p></div>
+  <p class="top"><a href="#top">↑ nach oben</a></p>
+</section>
+<section class="passage" id="p5">
+  <header class="ph-head">
+    <div class="rank">5</div>
+    <div>
+      <h2>Wohin mit dem Piratenführer?</h2>
+      <p class="meta"><span>II 5, 69</span><span>52 Wörter</span><span class="score">6 Punkte</span></p>
+    </div>
+  </header>
+  <p class="context"><b>Zusammenhang:</b> Verres versteckt den echten Piratenführer. Cicero fragt spöttisch, wohin er ihn bringen lässt.</p>
+  <div class="texts">
+    <div class="txt lat"><h3>Lateinischer Text</h3><p lang="la">Itaque hominem huic optimae tutissimaeque custodiae non audet committere, denique Syracusas totas timet, amandat hominem—quo? Lilybaeum fortasse? Video; tamen homines maritimos non plane reformidat. Minime, iudices. Panhormum igitur? Audio; quamquam Syracusis, quoniam in Syracusano captus erat, maxime, si minus supplicio adfici, at custodiri oportebat. Ne Panhormum quidem. Quo igitur? quo putatis?</p></div>
+    <div class="txt de"><h3>Übersetzung</h3><p>Deshalb wagt [Verres] nicht, den Mann diesem besten und sichersten Gefängnis anzuvertrauen. Schließlich fürchtet er ganz Syrakus und schickt den Mann weg – wohin? Vielleicht nach Lilybaeum? Ich verstehe; doch vor Leuten von der Küste hat er ja keine allzu große Angst. Keineswegs, ihr Richter [dorthin schickt er ihn nicht]. Also nach Panormus? Ich höre es; obwohl man ihn doch am ehesten in Syrakus, weil er im Gebiet von Syrakus gefangen worden war, wenn schon nicht hinrichten, so doch wenigstens bewachen musste. Nicht einmal nach Panormus. Wohin also? Wohin, glaubt ihr?</p></div>
+  </div>
+  <h3>Bewertung</h3>
+  <div class="scroll"><table class="crit"><thead><tr><th>Kriterium</th><th class="c">Punkte</th><th>Begründung</th></tr></thead>
+  <tbody><tr><th scope="row">K1 Ortsname</th><td class="c p1">1</td><td>Drei Städte: <i>Syracusas</i>, <i>Lilybaeum</i>, <i>Panhormum</i>.</td></tr><tr><th scope="row">K2 Sizilien ohne <i>Sicilia</i></th><td class="c p1">1</td><td>Alle drei liegen auf Sizilien. <i>Sicilia</i> steht nicht da.</td></tr><tr><th scope="row">K3 Ellipse im 1. Satz</th><td class="c p1">1</td><td><i>non audet</i> hat kein Subjekt. Gemeint ist Verres; der ganze Abschnitt handelt von ihm.</td></tr><tr><th scope="row">K4 etwa 60 Wörter</th><td class="c ph">½</td><td>52 Wörter, etwas zu kurz.</td></tr><tr><th scope="row">K5 Stilmittel</th><td class="c p1">1</td><td>Ironie: <i>optimae tutissimaeque custodiae</i> meint die Steinbrüche. Gespieltes Frage-Antwort-Spiel. Rhetorische Fragen. Verkürzte Sätze.</td></tr><tr><th scope="row">K6 wenige Nebensätze</th><td class="c p1">1</td><td>Drei Nebensätze, alle in einem Satz.</td></tr><tr><th scope="row">K7 Bezug zu Text A–D</th><td class="c ph">½</td><td>Nur lose: Die Piraten bedrohen die Interessen Roms (B).</td></tr></tbody></table></div>
+  <div class="why"><h3>Warum dieser Platz</h3><p>Die meisten Ortsnamen und sehr lebendige Stilmittel. Die Stelle ist aber etwas kurz und hat nur einen losen Bezug zu den Unterrichtstexten. Deshalb steht sie hinter Platz 4.</p></div>
+  <p class="top"><a href="#top">↑ nach oben</a></p>
+</section>
+<section class="passage" id="p6">
+  <header class="ph-head">
+    <div class="rank">6</div>
+    <div>
+      <h2>Winter in Syrakus</h2>
+      <p class="meta"><span>II 5, 26</span><span>64 Wörter</span><span class="score">6 Punkte</span></p>
+    </div>
+  </header>
+  <p class="context"><b>Zusammenhang:</b> Cicero beschreibt, wie Verres als Statthalter den Winter in Syrakus verbringt.</p>
+  <div class="texts">
+    <div class="txt lat"><h3>Lateinischer Text</h3><p lang="la">Vrbem Syracusas elegerat, cuius hic situs atque haec natura esse loci caelique dicitur ut nullus umquam dies tam magna ac turbulenta tempestate fuerit quin aliquo tempore eius diei solem homines viderint. Hic ita vivebat iste bonus imperator hibernis mensibus ut eum non facile non modo extra tectum, sed ne extra lectum quidem quisquam viderit; ita diei brevitas conviviis, noctis longitudo stupris et flagitiis continebatur.</p></div>
+    <div class="txt de"><h3>Übersetzung</h3><p>[Verres] hatte sich die Stadt Syrakus ausgesucht. Von ihr sagt man, ihre Lage und ihr Klima seien so beschaffen, dass es noch nie einen Tag mit so starkem und stürmischem Unwetter gegeben habe, an dem die Menschen nicht zu irgendeiner Zeit die Sonne gesehen hätten. Hier lebte dieser gute Feldherr in den Wintermonaten so, dass ihn kaum jemand außerhalb des Hauses, ja nicht einmal außerhalb des Bettes zu sehen bekam. So füllte er die Kürze des Tages mit Gelagen, die Länge der Nacht mit Unzucht und Schandtaten.</p></div>
+  </div>
+  <h3>Bewertung</h3>
+  <div class="scroll"><table class="crit"><thead><tr><th>Kriterium</th><th class="c">Punkte</th><th>Begründung</th></tr></thead>
+  <tbody><tr><th scope="row">K1 Ortsname</th><td class="c p1">1</td><td><i>Syracusas</i>.</td></tr><tr><th scope="row">K2 Sizilien ohne <i>Sicilia</i></th><td class="c p1">1</td><td>Syrakus liegt auf Sizilien. <i>Sicilia</i> steht nicht da.</td></tr><tr><th scope="row">K3 Ellipse im 1. Satz</th><td class="c p1">1</td><td><i>elegerat</i> hat kein Subjekt. Zwei Sätze davor steht <i>iste</i>.</td></tr><tr><th scope="row">K4 etwa 60 Wörter</th><td class="c p1">1</td><td>64 Wörter.</td></tr><tr><th scope="row">K5 Stilmittel</th><td class="c p1">1</td><td>Übertreibung (<i>nullus umquam dies</i>). Ironie (<i>iste bonus imperator</i>). Wortspiel <i>extra tectum – extra lectum</i>. Parallelismus mit Antithese Tag und Nacht.</td></tr><tr><th scope="row">K6 wenige Nebensätze</th><td class="c ph">½</td><td>Vier Nebensätze.</td></tr><tr><th scope="row">K7 Bezug zu Text A–D</th><td class="c ph">½</td><td>Nur lose: Verres ist das Gegenbild eines römischen Feldherrn (D).</td></tr></tbody></table></div>
+  <div class="why"><h3>Warum dieser Platz</h3><p>Gleiche Punktzahl wie Platz 5. Die Reihenfolge 5 bis 7 ist eine Ermessensfrage. Diese Stelle hat die passende Länge, aber mehr Nebensätze und lange, verschachtelte Sätze. Das passt schlechter zum Hinweis „vergleichsweise wenige Nebensätze“.</p></div>
+  <p class="top"><a href="#top">↑ nach oben</a></p>
+</section>
+<section class="passage" id="p7">
+  <header class="ph-head">
+    <div class="rank">7</div>
+    <div>
+      <h2>Ämterverkauf in den Städten</h2>
+      <p class="meta"><span>II 2, 120</span><span>55 Wörter</span><span class="score">6 Punkte</span></p>
+    </div>
+  </header>
+  <p class="context"><b>Zusammenhang:</b> Cicero wirft Verres vor, in den sizilischen Gemeinden Ämter und Ehren verkauft zu haben.</p>
+  <div class="texts">
+    <div class="txt lat"><h3>Lateinischer Text</h3><p lang="la">quod non ab omnibus aliis praeteritum excogitavit? ecqua res apud civitates Siculas expetitur, in qua aut honos aliquis sit aut potestas aut procuratio, quin eam rem tu ad tuum quaestum nundinationemque hominum traduxeris? Dicta sunt priore actione et privatim et publice testimonia; legati Centuripini, Halaesini, Catinenses, Panhormitanique dixerunt, multarum praeterea civitatum, iam vero privatim plurimi.</p></div>
+    <div class="txt de"><h3>Übersetzung</h3><p>Was hat [Verres] sich nicht ausgedacht, woran alle anderen vorbeigegangen waren? Gibt es in den sizilischen Gemeinden überhaupt etwas, um das man sich bewirbt und mit dem irgendeine Ehre, Amtsgewalt oder Verwaltungsaufgabe verbunden ist, das du nicht zu deinem Gewinn und zu einem Schacher mit Menschen gemacht hast? In der ersten Verhandlung wurden Zeugenaussagen gemacht, von Einzelnen und im Namen der Gemeinden. Gesandte aus Centuripae, Halaesa, Catina und Panormus haben ausgesagt, dazu Gesandte vieler weiterer Gemeinden und außerdem sehr viele Privatleute.</p></div>
+  </div>
+  <h3>Bewertung</h3>
+  <div class="scroll"><table class="crit"><thead><tr><th>Kriterium</th><th class="c">Punkte</th><th>Begründung</th></tr></thead>
+  <tbody><tr><th scope="row">K1 Ortsname</th><td class="c ph">½</td><td>Nur Namen von Einwohnern (<i>Centuripini, Halaesini, Catinenses, Panhormitani</i>).</td></tr><tr><th scope="row">K2 Sizilien ohne <i>Sicilia</i></th><td class="c p1">1</td><td><i>civitates Siculas</i>. <i>Sicilia</i> steht nicht da.</td></tr><tr><th scope="row">K3 Ellipse im 1. Satz</th><td class="c p1">1</td><td><i>excogitavit</i> hat kein Subjekt. Einschränkung: Der Ausschnitt beginnt mitten in einer Reihe von Fragen. Die Frage davor enthält <i>iste</i>.</td></tr><tr><th scope="row">K4 etwa 60 Wörter</th><td class="c p1">1</td><td>55 Wörter.</td></tr><tr><th scope="row">K5 Stilmittel</th><td class="c p1">1</td><td>Rhetorische Fragen. Viele „oder“ (<i>aut … aut … aut</i>). Aufzählung der Städte. Antithese <i>privatim – publice</i>.</td></tr><tr><th scope="row">K6 wenige Nebensätze</th><td class="c p1">1</td><td>Zwei Nebensätze.</td></tr><tr><th scope="row">K7 Bezug zu Text A–D</th><td class="c ph">½</td><td>Nur lose: Ausbeutung der sizilischen Gemeinden (B).</td></tr></tbody></table></div>
+  <div class="why"><h3>Warum dieser Platz</h3><p>Gleiche Punktzahl wie Platz 5 und 6. Sie steht dahinter, weil sie keinen Stadtnamen hat. Außerdem beginnt sie mitten in einer Fragenreihe. Als Klausurtext müsste man den Anfang wohl umbauen.</p></div>
+  <p class="top"><a href="#top">↑ nach oben</a></p>
+</section>
+<section class="passage" id="p8">
+  <header class="ph-head">
+    <div class="rank">8</div>
+    <div>
+      <h2>Silber aus Haluntium</h2>
+      <p class="meta"><span>II 4, 51</span><span>57 Wörter</span><span class="score">6 Punkte</span></p>
+    </div>
+  </header>
+  <p class="context"><b>Zusammenhang:</b> Verres schickt Archagathus in die Stadt Haluntium. Er soll dort alles Silber einsammeln.</p>
+  <div class="texts">
+    <div class="txt lat"><h3>Lateinischer Text</h3><p lang="la">Ei negotium dedit ut, quidquid Halunti esset argenti caelati aut si quid etiam Corinthiorum, id omne statim ad mare ex oppido deportaretur. Escendit in oppidum Archagathus. Homo nobilis, qui a suis amari et diligi vellet, ferebat graviter illam sibi ab isto provinciam datam, nec quid faceret habebat; pronuntiat quid sibi imperatum esset; iubet omnis proferre quod haberent.</p></div>
+    <div class="txt de"><h3>Übersetzung</h3><p>[Verres] gab ihm den Auftrag, alles, was es in Haluntium an Silber mit Reliefschmuck und vielleicht auch an korinthischen Gefäßen gab, sofort aus der Stadt hinunter ans Meer zu schaffen. Archagathus stieg in die Stadt hinauf. Er war ein vornehmer Mann, der von seinen Mitbürgern geliebt und geachtet werden wollte. Deshalb nahm er es schwer, dass Verres ihm diese Aufgabe übertragen hatte, und wusste nicht, was er tun sollte. Er gab bekannt, was ihm befohlen worden war, und forderte alle auf, herauszugeben, was sie besaßen.</p></div>
+  </div>
+  <h3>Bewertung</h3>
+  <div class="scroll"><table class="crit"><thead><tr><th>Kriterium</th><th class="c">Punkte</th><th>Begründung</th></tr></thead>
+  <tbody><tr><th scope="row">K1 Ortsname</th><td class="c p1">1</td><td><i>Halunti</i> (Lokativ von Haluntium).</td></tr><tr><th scope="row">K2 Sizilien ohne <i>Sicilia</i></th><td class="c p1">1</td><td>Haluntium liegt auf Sizilien. <i>Sicilia</i> steht nicht da.</td></tr><tr><th scope="row">K3 Ellipse im 1. Satz</th><td class="c p1">1</td><td><i>dedit</i> hat kein Subjekt. Der Satz davor nennt Verres <i>praetor</i>.</td></tr><tr><th scope="row">K4 etwa 60 Wörter</th><td class="c p1">1</td><td>57 Wörter.</td></tr><tr><th scope="row">K5 Stilmittel</th><td class="c p1">1</td><td>Ironischer Doppelsinn von <i>provincia</i> („Aufgabe“). Kontrast: Verres bleibt unten, Archagathus muss hinaufsteigen. Zwei Wörter für eine Sache (<i>amari et diligi</i>).</td></tr><tr><th scope="row">K6 wenige Nebensätze</th><td class="c p0">0</td><td><b>Sieben</b> kurze Nebensätze. Das widerspricht dem Hinweis der Lehrkraft direkt.</td></tr><tr><th scope="row">K7 Bezug zu Text A–D</th><td class="c p1">1</td><td><b>A:</b> Das Proöm sagt, Verres habe jedes <i>argenteum vas</i> und jedes <i>Corinthium</i> aufgespürt. Hier sieht man, wie er das einsammeln lässt.</td></tr></tbody></table></div>
+  <div class="why"><h3>Warum dieser Platz</h3><p>Auch 6 Punkte, aber als einzige mit einem vollen Ausfall (0 Punkte bei K6). Bei gleicher Punktzahl steht eine Stelle mit Ausfall hinten. Ohne die vielen Nebensätze läge sie weit vorn.</p></div>
+  <p class="top"><a href="#top">↑ nach oben</a></p>
+</section>
+
+<section class="card">
+  <h2>Was sicher ist und was Vermutung</h2>
+  <h3>Belegbar</h3>
+  <ul>
+    <li>Die drei Spitzenplätze stammen aus zwei Episoden: Segesta (II 4, 75–83) und Servilius (II 5, 139–142).</li>
+    <li>Alle Texte sind Wort für Wort gegen die kritische Ausgabe von W. Peterson (Oxford 1917) geprüft.</li>
+  </ul>
+  <h3>Vermutung</h3>
+  <ul>
+    <li>Lehrkräfte nehmen gern ein ungelesenes Stück aus einer Episode, die die Klasse schon kennt. Das spräche für Segesta (Platz 1 und 2).</li>
+    <li>Ob ein Einwohnername wie <i>Segestani</i> als Ortsname zählt, entscheidet zwischen Segesta und Servilius. Wer den Stadtnamen wichtiger nimmt als die Zahl der Nebensätze, setzt Servilius auf Platz 1.</li>
+  </ul>
+  <h3>Grenzen</h3>
+  <ul>
+    <li>Lehrkräfte kürzen und vereinfachen Klausurtexte. Der echte Text kann leicht abweichen.</li>
+    <li>Ein Skript hat alle Verres-Reden in 5.271 Ausschnitte mit 52 bis 75 Wörtern zerlegt und nach den Hinweisen gefiltert. Rund 200 Treffer wurden von Hand gelesen. Erfasst sind nur Stellen, bei denen Verres in den drei Sätzen davor genannt wird. Steht er weiter vorne, kann eine Stelle fehlen.</li>
+    <li>Platz 9 und 10 (II 4, 40 und II 5, 82, je 5½ Punkte) sind hier nicht aufgeführt. Ausgeschlossen wurde unter anderem II 5, 140: Dort fehlt das Subjekt nur im Nebensatz.</li>
+    <li>Die Übersetzungen sind Arbeitsübersetzungen zum Lernen. Sie stammen aus keiner veröffentlichten Ausgabe.</li>
+  </ul>
+  <h3>Quellen</h3>
+  <ul>
+    <li>Lateinischer Text: The Latin Library, <a href="http://www.thelatinlibrary.com/cicero/verres.2.2.shtml">Buch 2</a>, <a href="http://www.thelatinlibrary.com/cicero/verres.2.4.shtml">Buch 4</a>, <a href="http://www.thelatinlibrary.com/cicero/verres.2.5.shtml">Buch 5</a>. Die Latin Library schreibt manchmal <i>V</i> statt <i>U</i> (<i>Vrbem</i>).</li>
+    <li>Gegenprobe: <a href="http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.02.0012:text=Ver.:actio=2:book=4:section=76">Perseus Digital Library</a>, Ausgabe Peterson (Oxford 1917).</li>
+  </ul>
+</section>
+</main>
+<footer class="wrap">Viel Erfolg am Montag!</footer>
+</body>
+</html>
